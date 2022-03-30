@@ -1,12 +1,14 @@
 {
+  "include": ["src", "types"],
   "compilerOptions": {
     "target": "es2016",
-    "module": "commonjs",
+    "lib": ["dom", "esnext"],
     "baseUrl": "./src/",
     "resolveJsonModule": true,
     "declaration": true,
     "outDir": "./dist",
     "esModuleInterop": true,
+    "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitAny": true,
@@ -15,6 +17,8 @@
     "noUnusedParameters": true,
     "allowUnreachableCode": true,
     "skipLibCheck": true,
+    "noFallthroughCasesInSwitch": true,
+    "noEmit": true,
     "paths": {
       "@interfaces/*": [
         "interfaces/*"
