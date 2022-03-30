@@ -1,12 +1,15 @@
 {
     "name": "bepro-js",
-    "version": "2.0.0-alpha.0",
+    "version": "2.0.0-alpha.1",
     "description": "",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
     "module": "dist/index.esm.js",
     "engines": {
         "node": "^14 || ^16"
+    },
+    "bin": {
+        "abi-parser": "./tooling/abi-parser.js"
     },
     "files": [
         "dist",
@@ -20,7 +23,6 @@
         "compile": "truffle compile",
         "prebuild": "npm run compile",
         "prepublishOnly": "npm run build",
-        "postinstall": "node tooling/post-install.js",
         "test": "mocha --bail --timeout 60000 --exit --require ts-node/register --require tsconfig-paths/register 'test/**/*.spec.{ts,tsx}' --pretty",
         "postbuild": "tscpaths -p ./tsconfig.json -s ./src -o ./dist &> /dev/null",
         "docs": "typedoc",
